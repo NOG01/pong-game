@@ -65,3 +65,42 @@ sc.onkeypress(paddleaup, "e")
 sc.onkeypress(paddleadown, "x")
 sc.onkeypress(paddlebup, "Up")
 sc.onkeypress(paddlebdown, "Down")
+
+while True:
+    sc.update()
+    hit_ball.setx(hit_ball.xcor()+hit_ball.dx)
+    hit_ball.sety(hit_ball.ycor()+hit_ball.dy)
+
+    if hit_ball.ycor() > 280:
+        hit_ball.sety(280)
+        hit_ball.dy *= -1
+    if hit_ball.ycor() < -280:
+        hit_ball.sety(-280)
+        hit_ball.dy *= -1
+
+    if hit_ball.xcor() > 500:
+        hit_ball.goto(0, 0)
+        hit_ball.dy *= -1
+
+    sketch.clear()
+    sketch.write("Left_player : {} Right_player : {}".format(
+        left_player, right_player), align="center",
+        font=("Courier", 24, "normal"))
+    
+    if hit_ball.xcor() < -500:
+        hit_ball.goto(0, 0)
+        hit_ball.dy *= -1
+        right_player += 1
+        sketch.clear()
+        sketch.write("Left_player : {} Right_player: {}".format(
+        left_player, right_player), align="center",
+        font=("Courier", 24, "normal"))
+    
+    if (hit_ball.xcor() > 360 and
+                        hit_ball.xcor() < 370) and (hit_ball.ycor()
+                                                    < right_player.ycor()+40 and
+                                                    hit_ball.ycor() > right_pad.ycor()-40):
+                        hit_ball.setx(360)
+                        hit_ball.dx*=-1
+
+  #ongoing...

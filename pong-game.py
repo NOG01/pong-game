@@ -3,7 +3,7 @@ import turtle
 sc = turtle.Screen()
 sc.title("Pong Game")
 sc.bgcolor("black")
-sc.setup(width=1920, height=1080)
+sc.setup(width=1280, height=720)
 
 left_pad = turtle.Turtle()
 left_pad.speed(0)
@@ -35,7 +35,7 @@ right_player = 0
 
 sketch = turtle.Turtle()
 sketch.speed(0)
-sketch.color("red")
+sketch.color("white")
 sketch.penup()
 sketch.hideturtle()
 sketch.goto(0, 260)
@@ -61,8 +61,8 @@ def paddlebdown():
     right_pad.sety(y)
 
 sc.listen()
-sc.onkeypress(paddleaup, "e")
-sc.onkeypress(paddleadown, "x")
+sc.onkeypress(paddleaup, "w")
+sc.onkeypress(paddleadown, "s")
 sc.onkeypress(paddlebup, "Up")
 sc.onkeypress(paddlebdown, "Down")
 
@@ -98,7 +98,7 @@ while True:
     
     if (hit_ball.xcor() > 360 and
                         hit_ball.xcor() < 370) and (hit_ball.ycor()
-                                                    < right_player.ycor()+40 and
+                                                    <right_pad.ycor()+40 and
                                                     hit_ball.ycor() > right_pad.ycor()-40):
                         hit_ball.setx(360)
                         hit_ball.dx*=-1

@@ -27,8 +27,8 @@ hit_ball.shape("circle")
 hit_ball.color("red")
 hit_ball.penup()
 hit_ball.goto(0, 0)
-hit_ball.dx=5
-hit_ball.dy=-5
+hit_ball.dx=7
+hit_ball.dy=-7
 
 left_player = 0
 right_player = 0
@@ -39,7 +39,7 @@ sketch.color("white")
 sketch.penup()
 sketch.hideturtle()
 sketch.goto(0, 260)
-sketch.write("Left_player : 0 Right_player: 0",
+sketch.write("Player One : 0 Player Two: 0",
              align="center", font=("Courier",
                                    24, "normal"))
 
@@ -83,7 +83,7 @@ while True:
         hit_ball.dy *= -1
 
     sketch.clear()
-    sketch.write("Left_player : {} Right_player : {}".format(
+    sketch.write("Player One : {} Player Two : {}".format(
         left_player, right_player), align="center",
         font=("Courier", 24, "normal"))
     
@@ -92,7 +92,7 @@ while True:
         hit_ball.dy *= -1
         right_player += 1
         sketch.clear()
-        sketch.write("Left_player : {} Right_player: {}".format(
+        sketch.write("Player One : {} Player Two: {}".format(
         left_player, right_player), align="center",
         font=("Courier", 24, "normal"))
     

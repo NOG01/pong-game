@@ -1,6 +1,6 @@
 # Pong Game
 
-A simple Pong game implemented in Python using the Turtle graphics module.
+A Pong game implemented in Python using the Turtle graphics module.
 
 ## Installation
 
